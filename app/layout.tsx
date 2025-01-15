@@ -42,17 +42,18 @@
 // }
 
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Enriqueta, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const geistSans = Enriqueta({
+  variable: "--font-Enriqueta",
   subsets: ["latin"],
+  weight: "400"
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const geistMono = JetBrains_Mono({
+  variable: "--font-JetBrains-Mono",
   subsets: ["latin"],
 });
 
