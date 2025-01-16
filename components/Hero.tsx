@@ -10,21 +10,21 @@ import { ImWrench } from 'react-icons/im'
 
 const Hero = () => {
   return (
-    <div className='pb-20 pt-36'>
+    <div className='pb-15 pt-36'>
         <div>
-          <Spotlight className='-top-60 -left-20
-           md:left-[7vw] lg:left-[26vw]' 
+          <Spotlight className='-top-80 -left-20
+           md:left-[7vw] lg:left-[18vw] lg:-top-[42vh]' 
           fill='white'/> 
-          
           {/* Purple spotlight */}
           <Spotlight className='-top-80 -left-70 
-          md:left-[33vw] lg:left-[38vw]' 
-          fill='purple'/> 
-    
-          {/* Blue spotlight */}
-          <Spotlight className='-top-60 -left-50
-          md:left-[24vw] lg:left-[37vw]' 
-          fill='rgba(127, 154, 245)'/>
+            md:left-[33vw] lg:left-[27vw] lg:-top-[65vh]' 
+            fill='purple'/> 
+      
+            {/* Blue spotlight */}
+            <Spotlight className='-top-60 -left-50
+            md:left-[24vw] lg:left-[25vw] lg:-top-[47vh]' 
+            fill='rgba(127, 154, 245)'/>
+          
         </div>
 
         <div className="h-screen w-full dark:bg-black-100 bg-white  
