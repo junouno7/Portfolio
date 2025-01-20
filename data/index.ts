@@ -1,7 +1,7 @@
 export const navItems = [
     { name: "About", link: "#about" },
     { name: "Projects", link: "#projects" },
-    { name: "Testimonials", link: "#testimonials" },
+    { name: "Experience", link: "#experience" },
     { name: "Contact", link: "#contact" },
   ];
   
@@ -205,13 +205,16 @@ export const navItems = [
     {
       id: 1,
       img: "/git.svg",
+      url: "https://github.com/juneaukwon"
     },
     {
       id: 2,
       img: "/twit.svg",
+      url: "https://twitter.com/juneaukwon"
     },
     {
       id: 3,
       img: "/link.svg",
+      url: "https://linkedin.com/in/juneaukwon"
     },
   ];

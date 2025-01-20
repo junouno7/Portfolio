@@ -5,7 +5,7 @@ import { HoverBorderGradient } from "./ui/hover-border-gradient";
 
 const Experience = () => {
   return ( 
-    <div className="py-20 w-full">
+    <div className="py-20 w-full" id="experience">
       <h1 className="heading">
         My <span className="text-purple">work experience</span>
       </h1>
@@ -13,7 +13,7 @@ const Experience = () => {
       <div className="w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10">
         {workExperience.map((card) => (
           <HoverBorderGradient
-            key={card.id}
+            key={card.id} 
             as="button" // Set component type
             duration={0.33} // Set a reasonable animation duration
             // borderRadius="1.75rem"
