@@ -4,7 +4,7 @@ import { workExperience } from "@/data";
 import { HoverBorderGradient } from "./ui/hover-border-gradient";
 
 const Experience = () => {
-  return (
+  return ( 
     <div className="py-20 w-full">
       <h1 className="heading">
         My <span className="text-purple">work experience</span>
