@@ -7,7 +7,7 @@ export const TextGenerateEffect = ({
   words,
   className,
   filter = true,
-  duration = 0.5,
+  duration = 1,
 }: {
   words: string;
   className?: string;
@@ -15,7 +15,8 @@ export const TextGenerateEffect = ({
   duration?: number;
 }) => {
   const [scope, animate] = useAnimate();
-  let wordsArray = words.split(" ");
+  const wordsArray = words.split("|").map(line => line.trim());
+
   useEffect(() => {
     animate(
       "span",
@@ -24,40 +25,42 @@ export const TextGenerateEffect = ({
         filter: filter ? "blur(0px)" : "none",
       },
       {
-        duration: duration ? duration : 1,
+        duration,
         delay: stagger(0.2),
       }
     );
-  }, [scope.current]);
-
-  const renderWords = () => {
-    return (
-      <motion.div ref={scope}>
-        {wordsArray.map((word, idx) => {
-          return (
-            <motion.span
-              key={word + idx}
-              className={`${idx > 3 ? 'text-purple' : 
-                'dark:text-white text-black'} opacity-0`}
-              style={{
-                filter: filter ? "blur(10px)" : "none",
-              }}
-            >
-              {word}{" "}
-            </motion.span>
-          );
-        })}
-      </motion.div>
-    );
-  };
+  }, [scope.current, animate, duration, filter]);
 
   return (
-    <div className={cn("font-bold", className)}>
-      <div className="my-4">
-        <div className=" dark:text-white text-black leading-snug tracking-wide">
-          {renderWords()}
+    <motion.div 
+      ref={scope} 
+      className={cn("font-bold my-4 flex flex-col items-center w-full gap-0 md:gap-5 lg:gap-7", className)}
+    >
+      {wordsArray.map((line, lineIdx) => (
+        <div key={`line-${lineIdx}`} className="text-center">
+          {line.split(" ").map((word, idx) => {
+            const shouldBeInline = word.startsWith("_") && word.endsWith("_");
+            const displayWord = shouldBeInline ? word.slice(1, -1) : word;
+            
+            return (
+              <motion.span
+                key={`${word}-${lineIdx}-${idx}`}
+                className={cn(
+                  "opacity-0",
+                  shouldBeInline ? "inline-block" : "inline-block",
+                  idx !== 0 ? "ml-2" : "",
+                  lineIdx > 0 ? "text-purple" : "dark:text-white text-black"
+                )}
+                style={{
+                  filter: filter ? "blur(10px)" : "none",
+                }}
+              >
+                {displayWord}
+              </motion.span>
+            );
+          })}
         </div>
-      </div>
-    </div>
+      ))}
+    </motion.div>
   );
 };

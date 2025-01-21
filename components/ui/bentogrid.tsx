@@ -42,7 +42,7 @@ export const BentoGridItem = ({
   id,
   titleClassName,
   spareImg,
-
+  content,
 }: {
   className?: string;
   title?: string | React.ReactNode;
@@ -54,7 +54,18 @@ export const BentoGridItem = ({
   imgClassName?: string;
   titleClassName?: string;
   spareImg?: string;
-
+  content?: {
+    mechanical: {
+      icon: string;
+      title: string;
+      tools: string;
+    };
+    shop: {
+      icon: string;
+      title: string;
+      tools: string;
+    };
+  };
 }) => {
   const [copied, setCopied] =useState(false);
   const handleCopy = () => {
@@ -119,51 +130,74 @@ export const BentoGridItem = ({
           </div>
                   
           <div className="font-sans font-bold text-lg 
-            lg:text-3xl max-w-96 z-10">
+            lg:text-3xl max-w-96 lg:max-w-[65%] leading-tight z-10">
             {title}
           </div>
         
         {id ===2 && <GlobeDemo />}
 
         {id ===3 && (
-          <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
-            <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-              {['React.js', 'Next.js','JavaScript'].map((item) => (
-                <span key={item} className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 
-                  lg:opacity-100 rounded-lg text-center bg-[#10132E]">
-                  {item }
+          <div className="flex gap-1 lg:gap-5 w-fit absolute -right-1 lg:right-2">
+            <div className="flex flex-col gap-3 md:gap-3 lg:gap-5">
+              {['React.js', 'OpenCV','Python'].map((item) => (
+                <span key={item} className="py-2 lg:py-4 lg:px-4 px-3 text-xs lg:text-sm opacity-50 
+                  lg:opacity-100 rounded-lg text-center bg-[#10132E] font-mono">
+                  {item}
                 </span>
               ))}
-              <span className="lg:py-4 lg:px-3 py-4 px-3 rounded-lg text-center bg-[#10132e]"/>
+              <span className="lg:py-3 lg:px-3 py-3 px-3 rounded-lg text-center bg-[#10132e]"/>
             </div>
             
-            <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-              <span className="lg:py-4 lg:px-3 py-4 px-3 rounded-lg text-center bg-[#10132e]"/>
-              {['Python', 'Java','urmom'].map((item) => (
-                <span key={item} className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 
-                  lg:opacity-100 rounded-lg text-center bg-[#10132E]">
-                  {item }
+            <div className="flex flex-col gap-2 md:gap-2 lg:gap-4">
+              <span className="lg:py-3 lg:px-3 py-3 px-3 rounded-lg text-center bg-[#10132e]"/>
+              {['JavaScript', 'Java','ROS'].map((item) => (
+                <span key={item} className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-sm opacity-50 
+                  lg:opacity-100 rounded-lg text-center bg-[#10132E] font-mono">
+                  {item}
                 </span>
               ))}
-              
+            </div>
+          </div>
+        )}
+
+        {id === 5 && content && (
+          <div className="flex w-full h-full gap-4 items-center justify-center">
+            <div className="flex-1 flex flex-col items-center justify-center">
+              <div className="w-16 h-16 rounded-full bg-[#1a1f3d] flex items-center justify-center mb-4">
+                <img src={content.mechanical.icon} alt="Mechanical Design" className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl lg:text-2xl font-bold mb-3 text-center">{content.mechanical.title}</h3>
+              <p className="text-sm lg:text-base text-[#c1c2d3] text-center font-mono">
+                {content.mechanical.tools}
+              </p>
+            </div>
+
+            <div className="w-px bg-white/[0.08] self-stretch my-4" />
+
+            <div className="flex-1 flex flex-col items-center justify-center">
+              <div className="w-16 h-16 rounded-full bg-[#1a1f3d] flex items-center justify-center mb-4">
+                <img src={content.shop.icon} alt="Shop Tools" className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl lg:text-2xl font-bold mb-3 text-center">{content.shop.title}</h3>
+              <p className="text-sm lg:text-base text-[#c1c2d3] text-center font-mono">
+                {content.shop.tools}
+              </p>
             </div>
           </div>
         )}
 
         {id === 6 && (
           <div className="mt-5 relative">
-            <div className={`absolute -bottom-5 right-0`}
-            >
+            <div className={`absolute -bottom-5 right-0`}>
               <Lottie
-                  animationData={animationData}
-                  loop={copied}
-                  autoplay={copied}
-                />
+                animationData={animationData}
+                loop={copied}
+                autoplay={copied}
+              />
             </div>
             <MagicButton2 
               title={copied ? 'Email copied!' : 'Copy my email'}
               icon={<FaCopy />}
-
               position="left"
               otherClasses="!bg-[#161a31]"
               handleClick={handleCopy}

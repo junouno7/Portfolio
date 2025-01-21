@@ -50,21 +50,21 @@ const Hero = () => {
         <div className='flex justify-center relative my-20 z-10'>
           <div className='max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col
           items-center justify-center'>
-            <h2 className='uppercase tracking-widest text-xs text-center
-             text-blue-100 max-w-80'>
-              Dynamic Web Magic with Next.js
+            <h2 className='uppercase tracking-widest text-xs md:text-sm lg:text-base text-center
+             text-[#18e4a7] font-mono font-bold max-w-80 -ml-1.5 mb-0'>
+              Hi, my name is
             </h2>
             
             <TextGenerateEffect 
-              className='text-center text-[40px] md:text-5xl lg:text-6xl'
-              words='Transforming Concepts into Seamless Experiences just a sample'
+              className='text-[40px] md:text-5xl lg:text-6xl'
+              words="_Juneau_ _Kim._ | Mechanical Engineer"
             />
-            <p className='text-center md:tracking-wider mb-4 text-sm md:text-lg
-            lg:text-2xl'>
-              Hi, I&apos;m Juneau a developer based in Korea
+            <p className='text-center md:tracking-wider mb-4 mt-0 md:mt-7 lg:mt-7 text-sm md:text-base lg:text-lg
+            text-gray-400 dark:text-gray-400 font-mono'>
+              Mechanical / Software Engineer
             </p>
 
-            <a href='#projects'>
+            <a href='#projects' className='md:-mt-6 lg:-mt-7'>
               <MagicButton
                 title="Show my work "
                 icon={<ImWrench size={13.5} className="translate-y-[1px]"/>}
