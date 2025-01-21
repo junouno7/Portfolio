@@ -11,8 +11,8 @@ export function HoverBorderGradient({
   containerClassName,
   className,
   as: Tag = "button",
-  duration = 1,
-  slowDuration = 7, 
+  duration = 0.5,
+  slowDuration = 4, 
   clockwise = true,
   ...props
 }: React.PropsWithChildren<
@@ -47,10 +47,11 @@ export function HoverBorderGradient({
 //       "radial-gradient(16.2% 41.199999999999996% at 100% 50%, hsl(0, 0%, 100%) 0%, rgba(255, 255, 255, 0) 100%)",
 //   };
     const movingMap: string[] = [
-        "radial-gradient(24.84% 60% at 50% 0%, hsl(0, 0%, 100%) 0%, rgba(255, 255, 255, 0) 100%)",
-        "radial-gradient(19.92% 51.72% at 0% 50%, hsl(0, 0%, 100%) 0%, rgba(255, 255, 255, 0) 100%)",
-        "radial-gradient(24.84% 60% at 50% 100%, hsl(0, 0%, 100%) 0%, rgba(255, 255, 255, 0) 100%)",
-        "radial-gradient(19.44% 49.44% at 100% 50%, hsl(0, 0%, 100%) 0%, rgba(255, 255, 255, 0) 100%)",
+        "radial-gradient(24.84% 60% at 50% 0%, hsl(0, 0%, 100%) 0%, rgba(255, 255, 255, 0) 100%)", // TOP center
+        "radial-gradient(19.92% 51.72% at 0% 50%, hsl(0, 0%, 100%) 0%, rgba(255, 255, 255, 0) 100%)", // LEFT center
+        "radial-gradient(24.84% 60% at 50% 100%, hsl(0, 0%, 100%) 0%, rgba(255, 255, 255, 0) 100%)", // BOTTOM center
+        "radial-gradient(19.44% 49.44% at 100% 50%, hsl(0, 0%, 100%) 0%, rgba(255, 255, 255, 0) 100%)", // RIGHT center
+        "radial-gradient(24.84% 60% at 100% 0%, hsl(0, 0%, 100%) 0%, rgba(255, 255, 255, 0) 100%)", // TOP-RIGHT corner (right edge to top edge)
     ];
 
   const highlight =
@@ -101,10 +102,10 @@ export function HoverBorderGradient({
         initial={{ background: movingMap[3] }}
         animate={{
             background: hovered
-              ? [movingMap[3], highlight]
+              ? [movingMap[0], highlight] // Start blue flash from top center
               : isHoverOutTransition 
-                ? [highlight, movingMap[3], ...movingMap, movingMap[3]]
-                : [...movingMap, movingMap[3]]
+                ? [highlight, movingMap[0], ...movingMap.slice(1)] // Start from top center after hover out
+                : [...movingMap.slice(0, -1), movingMap[4], movingMap[0]] // Normal rotation with corner transition
           }}
           transition={{
             ease: "linear",
