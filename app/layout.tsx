@@ -1,46 +1,3 @@
-// import type { Metadata } from "next";
-// import { Geist, Geist_Mono } from "next/font/google";
-// import "./globals.css";
-// import { ThemeProvider } from "./provider";
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
-
-// export const metadata: Metadata = {
-//   title: "Juneau's Portfolio",
-//   description: "Gangsta Portfolio",
-// };
-
-// export default function RootLayout({
-//   children,
-// }: Readonly<{
-//   children: React.ReactNode;
-// }>) {
-//   return (
-//     <html lang="en">
-//       <body
-//         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-//       >
-//         <ThemeProvider
-//           attribute="class"
-//           defaultTheme="dark"
-//           enableSystem
-//           disableTransitionOnChange
-//         >
-//           {children}
-//         </ThemeProvider>
-//       </body>
-//     </html>
-//   );
-// }
-
 import type { Metadata } from "next";
 import { Enriqueta, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
@@ -58,8 +15,42 @@ const geistMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Juneau's Portfolio",
-  description: "Gangsta Portfolio",
+  title: "Juneau Kim",
+  description: "Portfolio",
+  icons: {
+    icon: [
+      {
+        url: "/favicon.ico",
+        sizes: "any",
+        type: "image/x-icon",
+      },
+      {
+        url: "/icon.png",
+        type: "image/png",
+        sizes: "32x32",
+      },
+      {
+        url: "/favicon-16x16.png",
+        type: "image/png",
+        sizes: "16x16",
+      },
+    ],
+    apple: {
+      url: "/apple-icon.png",
+      type: "image/png",
+      sizes: "180x180",
+    },
+    other: [
+      {
+        rel: "android-chrome-192x192",
+        url: "/android-chrome-192x192.png",
+      },
+      {
+        rel: "android-chrome-512x512",
+        url: "/android-chrome-512x512.png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

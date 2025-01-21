@@ -6,14 +6,14 @@ import { TextGenerateEffect } from './ui/TextGenerateEffect'
 import { ImWrench } from 'react-icons/im'
 // import { BackgroundBeams } from './ui/background-beams'
 
-
+//# asdasdasdasd
 
 const Hero = () => {
   return (
     <div className='pb-15 pt-36'>
         <div>
           <Spotlight className='hidden lg:block -top-80 -left-20
-           lg:left-[18vw] lg:-top-[42vh]' 
+           lg:left-[16vw] lg:-top-[42vh]' 
           fill='white'/> 
          
           <Spotlight className='hidden lg:block -top-80 -left-70
@@ -44,7 +44,7 @@ const Hero = () => {
           {/* Radial gradient for the container to give a faded look */}
           <div className="absolute pointer-events-none inset-0 flex 
           items-center justify-center dark:bg-black-100 bg-white 
-          [mask-image:radial-gradient(ellipse_at_center,transparent_12%,black)]"/>
+          [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"/>
         </div>
 
         <div className='flex justify-center relative my-20 z-10'>
@@ -58,6 +58,8 @@ const Hero = () => {
             <TextGenerateEffect 
               className='text-[40px] md:text-5xl lg:text-6xl'
               words="_Juneau_ _Kim._ | Mechanical Engineer"
+              filter={true}
+              duration={2.8}
             />
             <p className='text-center md:tracking-wider mb-4 mt-0 md:mt-7 lg:mt-7 text-sm md:text-base lg:text-lg
             text-gray-400 dark:text-gray-400 font-mono'>
@@ -69,7 +71,7 @@ const Hero = () => {
                 title="Show my work "
                 icon={<ImWrench size={13.5} className="translate-y-[1px]"/>}
                 position='right'
-                titleClass="font-semibold" //font-[YourFontFamily]"
+                titleClass="font-semibold"
               />
             </a>
 

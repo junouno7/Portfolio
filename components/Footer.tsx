@@ -1,11 +1,12 @@
-import { FaLocationArrow } from "react-icons/fa6";
+
 
 import { socialMedia } from "@/data";
 import MagicButton from "./ui/MagicButton";
+import { IoMailOpenOutline } from "react-icons/io5";
 
 const Footer = () => {
   return (
-    <footer className="w-full pb-10 mb-[100px] md:mb-9" id="contact">
+    <footer className="w-full pb-8 mb-[100px] md:mb-28 md:pt-8" id="contact">
       {/* background grid */}
       <div className="w-full absolute left-0 bottom-0 min-h-96 overflow-hidden">
         <img
@@ -17,22 +18,20 @@ const Footer = () => {
 
       <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw]">
-          Ready to take <span className="text-purple">your</span> digital
-          presence to the next level?
+          Wanna ask me a <span className="text-purple">question?</span>
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center">
-          Reach out to me today and let&apos;s discuss how I can help you
-          achieve your goals.
+          Feel free to reach out and we can chat about anything!
         </p>
         <a href="mailto:juneaukim7@gmail.com">
           <MagicButton
             title="Let's get in touch"
-            icon={<FaLocationArrow />}
+            icon={<IoMailOpenOutline/>}
             position="right"
           />
         </a>
       </div>
-      <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
+      <div className="flex mt-16 md:flex-row flex-col justify-between items-center md:mt-52">
         <p className="md:text-base text-sm md:font-normal font-light">
           Copyright © 2025 Juneau Kim
         </p>

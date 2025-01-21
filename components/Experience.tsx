@@ -5,7 +5,7 @@ import { HoverBorderGradient } from "./ui/hover-border-gradient";
 
 const Experience = () => {
   return ( 
-    <div className="py-20 w-full" id="experience">
+    <div className="pt-28 pb-52 w-full" id="experience">
       <h1 className="heading">
         My <span className="text-purple">work experience</span>
       </h1>
@@ -33,12 +33,14 @@ const Experience = () => {
             
           >
             <div className="flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2">
-              <img
-                src={card.thumbnail}
-                alt={card.thumbnail}
-                className="lg:w-32 md:w-20 w-16"
-              />
-              <div className="lg:ms-5">
+              <div className="w-[84px] h-[84px] md:w-[105px] md:h-[105px] lg:w-[126px] lg:h-[126px] flex-shrink-0">
+                <img
+                  src={card.thumbnail}
+                  alt={card.thumbnail}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="lg:ms-5 flex-1">
                 <h1 className="text-start text-xl md:text-2xl font-bold">
                   {card.title}
                 </h1>

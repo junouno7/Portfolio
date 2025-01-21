@@ -13,7 +13,7 @@ import dynamic from "next/dynamic";
 
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
-
+ 
 export const BentoGrid = ({
   className,
   children,
@@ -161,25 +161,29 @@ export const BentoGridItem = ({
         )}
 
         {id === 5 && content && (
-          <div className="flex w-full h-full gap-4 items-center justify-center">
-            <div className="flex-1 flex flex-col items-center justify-center">
-              <div className="w-16 h-16 rounded-full bg-[#1a1f3d] flex items-center justify-center mb-4">
-                <img src={content.mechanical.icon} alt="Mechanical Design" className="w-8 h-8" />
+          <div className="flex w-full h-full gap-8 justify-center">
+            <div className="flex-1 flex flex-col items-center mt-[11%] lg:mt-[19%] md:mt-[15%]">
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-[#1a1f3d] flex items-center justify-center">
+                  <img src={content.mechanical.icon} alt="Mechanical Design" className="w-8 h-8 lg:w-10 lg:h-10" />
+                </div>
+                <h3 className="text-xl lg:text-2xl font-bold mt-4 text-center">{content.mechanical.title}</h3>
               </div>
-              <h3 className="text-xl lg:text-2xl font-bold mb-3 text-center">{content.mechanical.title}</h3>
-              <p className="text-sm lg:text-base text-[#c1c2d3] text-center font-mono">
+              <p className="text-sm lg:text-base text-[#c1c2d3] text-center font-mono mt-3">
                 {content.mechanical.tools}
               </p>
             </div>
 
-            <div className="w-px bg-white/[0.08] self-stretch my-4" />
+            <div className="w-px h-full bg-white/[0.11]" />
 
-            <div className="flex-1 flex flex-col items-center justify-center">
-              <div className="w-16 h-16 rounded-full bg-[#1a1f3d] flex items-center justify-center mb-4">
-                <img src={content.shop.icon} alt="Shop Tools" className="w-8 h-8" />
+            <div className="flex-1 flex flex-col items-center mt-[11%] lg:mt-[19%] md:mt-[15%]">
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-[#1a1f3d] flex items-center justify-center">
+                  <img src={content.shop.icon} alt="Shop Tools" className="w-8 h-8 lg:w-10 lg:h-10" />
+                </div>
+                <h3 className="text-xl lg:text-2xl font-bold mt-4 text-center">{content.shop.title}</h3>
               </div>
-              <h3 className="text-xl lg:text-2xl font-bold mb-3 text-center">{content.shop.title}</h3>
-              <p className="text-sm lg:text-base text-[#c1c2d3] text-center font-mono">
+              <p className="text-sm lg:text-base text-[#c1c2d3] text-center font-mono mt-3">
                 {content.shop.tools}
               </p>
             </div>
@@ -187,7 +191,7 @@ export const BentoGridItem = ({
         )}
 
         {id === 6 && (
-          <div className="mt-5 relative">
+          <div className="mt-5 relative flex justify-center">
             <div className={`absolute -bottom-5 right-0`}>
               <Lottie
                 animationData={animationData}

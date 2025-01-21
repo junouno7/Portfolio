@@ -1,6 +1,6 @@
 "use client";
 
-import { FaLocationArrow } from "react-icons/fa6";
+import { FaGithub, FaLocationArrow } from "react-icons/fa6";
 
 import { projects } from "@/data";
 import { PinContainer } from "./ui/Pin";
@@ -12,15 +12,15 @@ const RecentProjects = () => {
         A small selection of{" "}
         <span className="text-purple">recent projects</span>
       </h1>
-      <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10">
+      <div className="flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-3">
         {projects.map((item) => (
           <div
-            className="sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[80vw]"
+            className="sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[80vw] flex-shrink-0"
             key={item.id}
           >
             <PinContainer
-              title="/ui.aceternity.com"
-              href="https://twitter.com/mannupaaji"
+              title="Visit&nbsp;the&nbsp;site!"
+              href={item.link}
             >
               <div className="relative flex items-center justify-center sm:w-[570px] sm:h-[40vh] w-[80vw] overflow-hidden h-[30vh] mb-10">
                 <div
@@ -29,11 +29,15 @@ const RecentProjects = () => {
                 >
                   <img src="/bg.png" alt="bgimg" />
                 </div>
-                <img
-                  src={item.img}
-                  alt="cover"
-                  className="z-10 absolute bottom-0"
-                />
+                <div className="absolute w-full h-[100%] overflow-hidden z-10"> 
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    <img
+                      src={item.img}
+                      alt="cover"
+                      className="max-w-[80%] max-h-[80%] object-contain transform rotate-6 rounded-2xl hover:rotate-0 transition-transform duration-300"
+                    />
+                  </div>
+                </div>
               </div>
 
               <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
@@ -41,7 +45,7 @@ const RecentProjects = () => {
               </h1>
 
               <p
-                className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
+                className="lg:text-xl lg:font-normal font-light text-sm min-h-[4rem]"
                 style={{
                   color: "#BEC1DD",
                   margin: "1vh 0",
@@ -67,9 +71,9 @@ const RecentProjects = () => {
 
                 <div className="flex justify-center items-center">
                   <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-                    Check Live Site
+                    Check Github Repo
                   </p>
-                  <FaLocationArrow className="ms-3" color="#CBACF9" />
+                  <FaGithub className="ms-3" color="#CBACF9" />
                 </div>
               </div>
             </PinContainer>
