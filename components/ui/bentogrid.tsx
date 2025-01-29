@@ -130,32 +130,44 @@ export const BentoGridItem = ({
           </div>
                   
           <div className="font-sans font-bold text-lg 
-            lg:text-3xl max-w-96 lg:max-w-[65%] leading-tight z-10">
+            lg:text-3xl max-w-full lg:max-w-full leading-tight z-10">
             {title}
           </div>
         
         {id ===2 && <GlobeDemo />}
 
         {id ===3 && (
-          <div className="flex gap-1 lg:gap-5 w-fit absolute -right-1 lg:right-2">
-            <div className="flex flex-col gap-3 md:gap-3 lg:gap-5">
-              {['React.js', 'OpenCV','Python'].map((item) => (
-                <span key={item} className="py-2 lg:py-4 lg:px-4 px-3 text-xs lg:text-sm opacity-50 
-                  lg:opacity-100 rounded-lg text-center bg-[#10132E] font-mono">
-                  {item}
-                </span>
-              ))}
-              <span className="lg:py-3 lg:px-3 py-3 px-3 rounded-lg text-center bg-[#10132e]"/>
+          <div className="flex gap-1 lg:gap-3.5 w-fit absolute -right-1 lg:right-2 h-[95%] top-[2.5%]">
+            <div className="flex flex-col justify-between h-full">
+              <span key="react" className="h-[23%] flex items-center justify-center px-3 lg:px-4 text-xs lg:text-sm opacity-50 
+                lg:opacity-100 rounded-lg text-center bg-[#10132E] font-mono">
+                React.js
+              </span>
+              <span key="opencv" className="h-[23%] flex items-center justify-center px-3 lg:px-4 text-xs lg:text-sm opacity-50 
+                lg:opacity-100 rounded-lg text-center bg-[#10132E] font-mono">
+                OpenCV
+              </span>
+              <span key="python" className="h-[23%] flex items-center justify-center px-3 lg:px-4 text-xs lg:text-sm opacity-50 
+                lg:opacity-100 rounded-lg text-center bg-[#10132E] font-mono">
+                Python
+              </span>
+              <span className="h-[12%] flex items-center justify-center px-3 lg:px-3 rounded-lg text-center bg-[#10132e]"/>
             </div>
             
-            <div className="flex flex-col gap-2 md:gap-2 lg:gap-4">
-              <span className="lg:py-3 lg:px-3 py-3 px-3 rounded-lg text-center bg-[#10132e]"/>
-              {['JavaScript', 'Java','ROS'].map((item) => (
-                <span key={item} className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-sm opacity-50 
-                  lg:opacity-100 rounded-lg text-center bg-[#10132E] font-mono">
-                  {item}
-                </span>
-              ))}
+            <div className="flex flex-col gap-[6%] h-full">
+              <span className="h-[12%] flex items-center justify-center px-3 lg:px-3 rounded-lg text-center bg-[#10132e]"/>
+              <span key="javascript" className="h-[21.7%] flex items-center justify-center px-3 lg:px-3 text-xs lg:text-sm opacity-50 
+                lg:opacity-100 rounded-lg text-center bg-[#10132E] font-mono">
+                JavaScript
+              </span>
+              <span key="java" className="h-[21.7%] flex items-center justify-center px-3 lg:px-3 text-xs lg:text-sm opacity-50 
+                lg:opacity-100 rounded-lg text-center bg-[#10132E] font-mono">
+                Java
+              </span>
+              <span key="ros" className="h-[21.7%] flex items-center justify-center px-3 lg:px-3 text-xs lg:text-sm opacity-50 
+                lg:opacity-100 rounded-lg text-center bg-[#10132E] font-mono">
+                ROS
+              </span>
             </div>
           </div>
         )}

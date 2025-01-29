@@ -21,6 +21,7 @@ const RecentProjects = () => {
             <PinContainer
               title="Visit&nbsp;the&nbsp;site!"
               href={item.link}
+              className="group"
             >
               <div className="relative flex items-center justify-center sm:w-[570px] sm:h-[40vh] w-[80vw] overflow-hidden h-[30vh] mb-10">
                 <div
@@ -34,7 +35,7 @@ const RecentProjects = () => {
                     <img
                       src={item.img}
                       alt="cover"
-                      className="max-w-[80%] max-h-[80%] object-contain transform rotate-6 rounded-2xl hover:rotate-0 transition-transform duration-300"
+                      className="max-w-[80%] max-h-[80%] object-contain transform rotate-6 group-hover:rotate-0 transition-transform duration-300 rounded-2xl"
                     />
                   </div>
                 </div>

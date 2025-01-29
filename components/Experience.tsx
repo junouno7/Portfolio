@@ -15,7 +15,7 @@ const Experience = () => {
           <HoverBorderGradient
             key={card.id} 
             as="button" // Set component type
-            duration={0.33} // Set a reasonable animation duration
+            duration={0.4} // Set a reasonable animation duration
             // borderRadius="1.75rem"
             slowDuration={7}
             containerClassName="rounded-xl border-2 border-transparent md:col-span-2"

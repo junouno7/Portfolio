@@ -16,7 +16,7 @@ const geistMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Juneau Kim",
-  description: "Portfolio",
+  description: "Portfolio Juneau Kim",
   icons: {
     icon: [
       {
