@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -15,7 +15,17 @@ export const TextGenerateEffect = ({
   duration?: number;
 }) => {
   const [scope, animate] = useAnimate();
-  const wordsArray = words.split("|").map(line => line.trim());
+  
+  // Memoize the word processing to prevent unnecessary recalculations
+  const processedWords = useMemo(() => {
+    return words.split("|").map(line => ({
+      line: line.trim(),
+      words: line.trim().split(" ").map(word => ({
+        shouldBeInline: word.startsWith("_") && word.endsWith("_"),
+        displayWord: word.startsWith("_") && word.endsWith("_") ? word.slice(1, -1) : word
+      }))
+    }));
+  }, [words]);
 
   useEffect(() => {
     animate(
@@ -40,37 +50,32 @@ export const TextGenerateEffect = ({
         className
       )}
     >
-      {wordsArray.map((line, lineIdx) => (
+      {processedWords.map((lineData, lineIdx) => (
         <div key={`line-${lineIdx}`} className="text-center">
-          {line.split(" ").map((word, idx) => {
-            const shouldBeInline = word.startsWith("_") && word.endsWith("_");
-            const displayWord = shouldBeInline ? word.slice(1, -1) : word;
-
-            return (
-              <motion.span
-                key={`${word}-${lineIdx}-${idx}`}
-                initial={{
-                  opacity: 0,
-                  filter: filter ? "blur(7px)" : "blur(0px)",
-                }}
-                animate={{
-                  opacity: 1,
-                  filter: "blur(0px)",
-                }}
-                transition={{
-                  duration,
-                  ease: "easeInOut",
-                }}
-                className={cn(
-                  "inline-block",
-                  idx !== 0 ? "ml-2" : "",
-                  lineIdx > 0 ? "text-purple" : "dark:text-white text-black"
-                )}
-              >
-                {displayWord}{" "}
-              </motion.span>
-            );
-          })}
+          {lineData.words.map(({ shouldBeInline, displayWord }, idx) => (
+            <motion.span
+              key={`word-${lineIdx}-${idx}`}
+              initial={{
+                opacity: 0,
+                filter: filter ? "blur(7px)" : "blur(0px)",
+              }}
+              animate={{
+                opacity: 1,
+                filter: "blur(0px)",
+              }}
+              transition={{
+                duration,
+                ease: "easeInOut",
+              }}
+              className={cn(
+                "inline-block",
+                idx !== 0 ? "ml-2" : "",
+                lineIdx > 0 ? "text-purple" : "dark:text-white text-black"
+              )}
+            >
+              {displayWord}{" "}
+            </motion.span>
+          ))}
         </div>
       ))}
     </motion.div>

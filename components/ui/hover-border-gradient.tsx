@@ -8,8 +8,8 @@ export function HoverBorderGradient({
   containerClassName,
   className,
   as: Tag = "button",
-  duration = 0.5,
-  slowDuration = 4,
+  duration = 0.4,
+  slowDuration = 7,
   clockwise = false,
   ...props
 }: React.PropsWithChildren<{
@@ -28,11 +28,11 @@ export function HoverBorderGradient({
   const { movingMap, highlight, rotationSequence } = useMemo(() => {
     const gradients = [
       // Top gradient (wider due to longer edge)
-      "radial-gradient(30% 50% at 50% 0%, hsl(0, 0%, 100%) 0%, rgba(255, 255, 255, 0) 100%)",
+      "radial-gradient(35% 50% at 50% 0%, hsl(0, 0%, 100%) 0%, rgba(255, 255, 255, 0) 100%)",
       // Left gradient (narrower due to shorter edge)
       "radial-gradient(20% 50% at 0% 50%, hsl(0, 0%, 100%) 0%, rgba(255, 255, 255, 0) 100%)",
       // Bottom gradient (wider due to longer edge)
-      "radial-gradient(30% 50% at 50% 100%, hsl(0, 0%, 100%) 0%, rgba(255, 255, 255, 0) 100%)",
+      "radial-gradient(28% 50% at 50% 100%, hsl(0, 0%, 100%) 0%, rgba(255, 255, 255, 0) 100%)",
       // Right gradient (narrower due to shorter edge)
       "radial-gradient(20% 50% at 100% 50%, hsl(0, 0%, 100%) 0%, rgba(255, 255, 255, 0) 100%)",
       // Corner transitions with proportional sizes
@@ -108,7 +108,7 @@ export function HoverBorderGradient({
           height: "100%",
         }}
         initial={{ background: movingMap[0] }}
-        animate={{
+        animate={{ 
           background: animationSequence
         }}
         transition={transitionConfig}

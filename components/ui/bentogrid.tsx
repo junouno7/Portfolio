@@ -4,7 +4,7 @@ import { BackgroundGradientAnimation } from "./background-gradient-animation";
 import { Globe } from "./Globe";
 import { GlobeDemo } from "./GridGlobe";
 // import Lottie from "react-lottie";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import animationData from '@/data/confetti.json';
 import MagicButton from "./MagicButton";
 import MagicButton2 from "./MagicButton2";
@@ -67,16 +67,26 @@ export const BentoGridItem = ({
     };
   };
 }) => {
-  const [copied, setCopied] =useState(false);
+  const [copied, setCopied] = useState(false);
+  const [showGlobe, setShowGlobe] = useState(false);
+
+  useEffect(() => {
+    if (id === 2) {
+      const timer = setTimeout(() => {
+        setShowGlobe(true);
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [id]);
+
   const handleCopy = () => {
     navigator.clipboard.writeText('juneaukim7@gmail.com');
- 
     setCopied(true);
-
     setTimeout(() => {
       setCopied(false);
-    }, 5000);
+    }, 3500);
   }
+
   return (
     <div
       className={cn(
@@ -122,7 +132,7 @@ export const BentoGridItem = ({
 
         <div className={cn(
           titleClassName, `group-hover/bento:translate-x-2 transition duration-200
-          relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10`
+          relative md:h-full min-h-40 flex flex-col px-5 p-5 ${id === 4 ? 'lg:px-10 lg:pt-5 lg:pb-10' : 'lg:p-10'}`
         )}>
           <div className="font-sans font-extralight 
           text-[#c1c2d3] text-sm md:text-xs lg:text-base z-10">
@@ -134,7 +144,7 @@ export const BentoGridItem = ({
             {title}
           </div>
         
-        {id ===2 && <GlobeDemo />}
+        {id ===2 && showGlobe && <GlobeDemo />}
 
         {id ===3 && (
           <div className="flex gap-1 lg:gap-3.5 w-fit absolute -right-1 lg:right-2 h-[95%] top-[2.5%]">

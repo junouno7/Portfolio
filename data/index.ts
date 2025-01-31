@@ -18,7 +18,7 @@ export const navItems = [
     },
     {
       id: 2,
-      title: "I'm very flexible with time zone communications",
+      title: "I'm flexible with different time zone communications",
       description: "",
       className: "lg:col-span-2 md:col-span-3 md:row-span-2",
       imgClassName: "",
@@ -52,7 +52,7 @@ export const navItems = [
       title: "",
       description: "",
       className: "md:col-span-3 md:row-span-2",
-      imgClassName: "w-full h-[95%] object-cover -translate-x-3.5",
+      imgClassName: "w-full h-[95%] object-cover -translate-x-2 md:-translate-x-2 lg:-translate-x-3",
       titleClassName: "justify-between w-full h-full",
       content: {
         mechanical: {
@@ -155,21 +155,21 @@ export const navItems = [
     {
       id: 1,
       title: "Mechanical Design Engineer - DARIM SYSTEMS",
-      desc: "Designed and manufactured VR Simulators.",
+      desc: "Designed, manufactured, and operated VR Simulators.",
       className: "md:col-span-2",
       thumbnail: "/Darim.avif",
     },
     {
       id: 2,
       title: "Maintenance & Support Team - KATUSA",
-      desc: "Provided maintenance and support for radio towers all over Korea.",
+      desc: "Provided maintenance and support for US ARMY radio towers all over Korea.",
       className: "md:col-span-2", // change to md:col-span-2
       thumbnail: "/usfk.png",
     },
     {
       id: 3,
       title: "English Teacher - Chungdahm Institute",
-      desc: "Taught grades 1-6 English.",
+      desc: "Taught english to grades 1-6.",
       className: "md:col-span-2", // change to md:col-span-2
       thumbnail: "/chungdahm.webp",
     },
