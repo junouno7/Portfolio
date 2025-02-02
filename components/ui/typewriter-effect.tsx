@@ -1,6 +1,6 @@
 "use client";
-// Hero bentogrid textgenerateeffect typewritereffect
-// cursor blink instant, cursor size at screen sizes no rounded edge no blur transition
+
+
 import { cn } from "@/lib/utils";
 import { motion, stagger, useAnimate, useInView } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -39,8 +39,8 @@ export const TypewriterEffect = ({
           width: "fit-content",
         },
         {
-          duration: 0.3,
-          delay: stagger(0.1),
+          duration: 0.25,
+          delay: stagger(0.15),
           ease: "easeInOut",
         }
       ).then(() => {
@@ -78,7 +78,7 @@ export const TypewriterEffect = ({
   return (
     <div
       className={cn(
-        "text-base sm:text-xl md:text-3xl lg:text-5xl font-bold text-center",
+        "font-bold text-center",
         className
       )}
     >
@@ -98,7 +98,7 @@ export const TypewriterEffect = ({
           duration: 0
         }}
         className={cn(
-          "inline-block w-[4px] h-4 md:h-6 lg:h-10 bg-blue-500",
+          "inline-block w-[4px] h-[0.85em] bg-[#18e4a7] translate-y-[1px] origin-bottom", 
           cursorClassName
         )}
       ></motion.span>
@@ -106,7 +106,7 @@ export const TypewriterEffect = ({
   );
 };
 
-export const TypewriterEffectSmooth = ({
+export const TypewriterEffectSmooth = ({  //smooth typewriter effect as backup
   words,
   className,
   cursorClassName,

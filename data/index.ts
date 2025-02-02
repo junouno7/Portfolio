@@ -118,60 +118,72 @@ export const navItems = [
   
  
   
-  export const companies = [
-    {
-      id: 1,
-      name: "cloudinary",
-      img: "/cloud.svg",
-      nameImg: "/cloudName.svg",
-    },
-    {
-      id: 2,
-      name: "appwrite",
-      img: "/app.svg",
-      nameImg: "/appName.svg",
-    },
-    {
-      id: 3,
-      name: "HOSTINGER",
-      img: "/host.svg",
-      nameImg: "/hostName.svg",
-    },
-    {
-      id: 4,
-      name: "stream",
-      img: "/s.svg",
-      nameImg: "/streamName.svg",
-    },
-    {
-      id: 5,
-      name: "docker.",
-      img: "/dock.svg",
-      nameImg: "/dockerName.svg",
-    },
-  ];
+  // export const companies = [
+  //   {
+  //     id: 1,
+  //     name: "cloudinary",
+  //     img: "/cloud.svg",
+  //     nameImg: "/cloudName.svg",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "appwrite",
+  //     img: "/app.svg",
+  //     nameImg: "/appName.svg",
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "HOSTINGER",
+  //     img: "/host.svg",
+  //     nameImg: "/hostName.svg",
+  //   },
+  //   {
+  //     id: 4,
+  //     name: "stream",
+  //     img: "/s.svg",
+  //     nameImg: "/streamName.svg",
+  //   },
+  //   {
+  //     id: 5,
+  //     name: "docker.",
+  //     img: "/dock.svg",
+  //     nameImg: "/dockerName.svg",
+  //   },
+  // ];
   
-  export const workExperience = [
+  interface WorkExperience {
+    id: number;
+    title: string;
+    desc: string;
+    className: string;
+    thumbnail: string;
+    url: string;
+  }
+
+  export const workExperience: WorkExperience[] = [
     {
       id: 1,
       title: "Mechanical Design Engineer - DARIM SYSTEMS",
       desc: "Designed, manufactured, and operated VR Simulators.",
       className: "md:col-span-2",
       thumbnail: "/Darim.avif",
+      url: "https://imgur.com/a/CMwGtDO"
     },
     {
       id: 2,
       title: "Maintenance & Support Team - KATUSA",
       desc: "Provided maintenance and support for US ARMY radio towers all over Korea.",
-      className: "md:col-span-2", // change to md:col-span-2
+      className: "md:col-span-2",
       thumbnail: "/usfk.png",
+      url: "https://imgur.com/a/AjK0UjQ"
     },
     {
       id: 3,
       title: "English Teacher - Chungdahm Institute",
       desc: "Taught english to grades 1-6.",
-      className: "md:col-span-2", // change to md:col-span-2
+      className: "md:col-span-2",
       thumbnail: "/chungdahm.webp",
+      url: "https://www.chungdahm.com/"
     },
     {
       id: 4,
@@ -179,6 +191,7 @@ export const navItems = [
       desc: "Kitchen manager for teriyaki restaurant with 13 locations in Idaho and Utah.",
       className: "md:col-span-2",
       thumbnail: "/happy.png",
+      url: "https://www.ilovehappyteriyaki.com/"
     },
   ];
   

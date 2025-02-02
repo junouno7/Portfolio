@@ -23,12 +23,12 @@ const Hero = () => {
     // Show TextGenerateEffect after 400ms
     const textGenerateTimer = setTimeout(() => {
       setShowTextGenerate(true);
-    }, 3500);
+    }, 1750);
 
     // Show spotlights after 800ms
     const spotlightsTimer = setTimeout(() => {
       setShowSpotlights(true);
-    }, 3500);
+    }, 1500);
 
     // Cleanup timers
     return () => {
@@ -48,7 +48,7 @@ const Hero = () => {
     },
     {
       text: "name",
-      className: "!text-[#18e4a7] font-mono font-bold"
+      className: "!text-[#18e4a7] font-mono font-bold" 
     },
     {
       text: "is",
@@ -96,13 +96,24 @@ const Hero = () => {
               />
             )}
             
-            {showTextGenerate && (
+            {showTextGenerate ? (
               <TextGenerateEffect 
                 className='text-[40px] md:text-5xl lg:text-6xl'
                 words="_Juneau_ _Kim._ | Mechanical Engineer"
                 filter={true}
-                duration={2.8}
+                duration={2.2}
               />
+            ) : (
+              <div className="font-bold my-4 flex flex-col items-center w-full gap-2 md:gap-4 lg:gap-6 text-[40px] md:text-5xl lg:text-6xl">
+                <div className="text-center">
+                  <span className="inline-block text-transparent">Juneau </span>
+                  <span className="inline-block ml-2 lg:ml-3 text-transparent">Kim. </span>
+                </div>
+                <div className="text-center">
+                  <span className="inline-block text-transparent">Mechanical </span>
+                  <span className="inline-block ml-2 lg:ml-3 text-transparent">Engineer </span>
+                </div>
+              </div>
             )}
 
             <p className='text-center md:tracking-wider mb-4 mt-0 md:mt-7 lg:mt-7 text-sm md:text-base lg:text-lg

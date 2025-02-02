@@ -7,7 +7,7 @@ export const TextGenerateEffect = ({
   words,
   className,
   filter = true,
-  duration = 3,
+  duration = 1.5,
 }: {
   words: string;
   className?: string;
@@ -69,7 +69,7 @@ export const TextGenerateEffect = ({
               }}
               className={cn(
                 "inline-block",
-                idx !== 0 ? "ml-2" : "",
+                idx !== 0 ? "ml-2 lg:ml-3" : "",
                 lineIdx > 0 ? "text-purple" : "dark:text-white text-black"
               )}
             >

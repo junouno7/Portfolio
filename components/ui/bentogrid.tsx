@@ -6,7 +6,7 @@ import { GlobeDemo } from "./GridGlobe";
 // import Lottie from "react-lottie";
 import { useState, useEffect } from "react";
 import animationData from '@/data/confetti.json';
-import MagicButton from "./MagicButton";
+import MagicButton from "./MagicButton"; 
 import MagicButton2 from "./MagicButton2";
 import { FaCopy } from "react-icons/fa";
 import dynamic from "next/dynamic";
@@ -14,7 +14,7 @@ import dynamic from "next/dynamic";
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
  
-export const BentoGrid = ({
+export const BentoGrid = ({ 
   className,
   children,
 }: {
@@ -74,7 +74,7 @@ export const BentoGridItem = ({
     if (id === 2) {
       const timer = setTimeout(() => {
         setShowGlobe(true);
-      }, 2000);
+      }, 3850);
       return () => clearTimeout(timer);
     }
   }, [id]);
@@ -184,7 +184,7 @@ export const BentoGridItem = ({
 
         {id === 5 && content && (
           <div className="flex w-full h-full gap-8 justify-center">
-            <div className="flex-1 flex flex-col items-center mt-[11%] lg:mt-[19%] md:mt-[15%]">
+            <div className="flex-1 flex flex-col items-center mt-[8%] lg:mt-[16%] md:mt-[15%]">
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-[#1a1f3d] flex items-center justify-center">
                   <img src={content.mechanical.icon} alt="Mechanical Design" className="w-8 h-8 lg:w-10 lg:h-10" />
@@ -198,7 +198,7 @@ export const BentoGridItem = ({
 
             <div className="w-px h-full bg-white/[0.11]" />
 
-            <div className="flex-1 flex flex-col items-center mt-[11%] lg:mt-[19%] md:mt-[15%]">
+            <div className="flex-1 flex flex-col items-center mt-[8%] lg:mt-[16%] md:mt-[15%]">
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-[#1a1f3d] flex items-center justify-center">
                   <img src={content.shop.icon} alt="Shop Tools" className="w-8 h-8 lg:w-10 lg:h-10" />

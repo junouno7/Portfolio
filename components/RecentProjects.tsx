@@ -72,7 +72,7 @@ const RecentProjects = () => {
 
                 <div className="flex justify-center items-center">
                   <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-                    Check Github Repo
+                    Check Github
                   </p>
                   <FaGithub className="ms-3" color="#CBACF9" />
                 </div>
