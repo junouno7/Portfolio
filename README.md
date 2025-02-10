@@ -1,8 +1,5 @@
+## Portfolio is live
 Check out the live [site!](https://juneaukim.com)
-
-/n
-/n
-/n
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
