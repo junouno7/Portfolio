@@ -3,15 +3,22 @@ import { Enriqueta, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 
-const geistSans = Enriqueta({
+// Optimize font loading
+const enriqueta = Enriqueta({
   variable: "--font-Enriqueta",
   subsets: ["latin"],
-  weight: "400"
+  weight: "400",
+  display: 'swap', // Add font-display swap for better performance
+  preload: true,
+  adjustFontFallback: true, // Reduce layout shift
 });
 
-const geistMono = JetBrains_Mono({
+const jetbrainsMono = JetBrains_Mono({
   variable: "--font-JetBrains-Mono",
   subsets: ["latin"],
+  display: 'swap', // Add font-display swap for better performance
+  preload: true,
+  adjustFontFallback: true, // Reduce layout shift
 });
 
 export const metadata: Metadata = {
@@ -61,10 +68,19 @@ export default function RootLayout({
   const theme = "dark"; // Default to "dark" or fetch from a cookie/environment variable.
 
   return (
-    <html lang="en" className={theme} suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html 
+      lang="en" 
+      suppressHydrationWarning
+      className={`${enriqueta.variable} ${jetbrainsMono.variable}`}
+    >
+      <head>
+        <link 
+          rel="preconnect" 
+          href="https://fonts.gstatic.com" 
+          crossOrigin="anonymous" 
+        />
+      </head>
+      <body className="antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

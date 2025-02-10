@@ -29,7 +29,7 @@ export const navItems = [
     {
       id: 3,
       title: "My tech stack",
-      description: "I constantly try to improve",
+      description: "I'm constantly improving",
       className: "lg:col-span-2 md:col-span-3 md:row-span-2",
       imgClassName: "",
       titleClassName: "justify-center",
@@ -84,22 +84,15 @@ export const navItems = [
   export const projects = [
     {
       id: 1,
-      title: "Self-Driving AI RC Car",
-      des: "A self-driving AI RC car using OpenCV for lane detection and YOLO for real-time object detection.",
-      img: "/AICAR2.png",
-      iconLists: ["/python.svg", "/opencv.svg"],
-      link: "https://github.com/junouno7/selfdriving-car",
+      title: "Concept AGV/AMR Project (In Progress)",
+      des: "Developing a concept AGV/AMR using a Yahboom JetBot Mini, where a YOLO-based machine learning model enables the robot to detect objects through its camera and autonomously sort them into the correct locations",
+      img: "/final-project.png",
+      iconLists: ["/react.svg", "/flask.svg", "/tail.svg", "/ros.svg", "/opencv.svg"],
+      link: "https://github.com/CompetitionSoo/Final-Project",
+      
     },
     {
       id: 2,
-      title: "Stock Tracking Web App",
-      des: "A stock tracking web app built with Flask, JavaScript, and SQLite that uses the YFinance API to fetch real-time stock data.",
-      img: "/stocktracker.png",
-      iconLists: ["/python.svg", "/flask.svg", "/javascript.svg", "/css.svg", "/html.svg", "/sqlite.svg"],
-      link: "https://github.com/junouno7/Stock-Tracker",
-    },
-    {
-      id: 3,
       title: "Portfolio Website",
       des: "This portfolio website, built with Next.js for the user interface, Three.js for immersive 3D visuals, Framer Motion for smooth animations, and elegantly styled with TailwindCSS.",
       img: "/Portfolio.png",
@@ -107,12 +100,21 @@ export const navItems = [
       link: "https://github.com/junouno7/Portfolio",
     },
     {
+      id: 3,
+      title: "Self-Driving AI RC Car",
+      des: "A self-driving AI RC car using OpenCV for lane detection and YOLO for real-time object detection.",
+      img: "/AICAR2.png",
+      iconLists: ["/python.svg", "/opencv.svg"],
+      link: "https://github.com/junouno7/selfdriving-car",
+      
+    },
+    {
       id: 4,
-      title: "Bootcamp Project (In Progress)",
-      des: "",
-      img: "",
-      iconLists: [""],
-      link: "",
+      title: "Stock Tracking Web App",
+      des: "A stock tracking web app built with Flask, JavaScript, and SQLite that uses the YFinance API to fetch real-time stock data.",
+      img: "/stocktracker.png",
+      iconLists: ["/python.svg", "/flask.svg", "/javascript.svg", "/css.svg", "/html.svg", "/sqlite.svg"],
+      link: "https://github.com/junouno7/Stock-Tracker",
     },
   ];
   

@@ -13,7 +13,7 @@ import dynamic from "next/dynamic";
 
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
- 
+  
 export const BentoGrid = ({ 
   className,
   children,
@@ -65,7 +65,7 @@ export const BentoGridItem = ({
       title: string;
       tools: string;
     };
-  };
+  }; 
 }) => {
   const [copied, setCopied] = useState(false);
   const [showGlobe, setShowGlobe] = useState(false);
@@ -74,7 +74,7 @@ export const BentoGridItem = ({
     if (id === 2) {
       const timer = setTimeout(() => {
         setShowGlobe(true);
-      }, 3850);
+      }, 4000);
       return () => clearTimeout(timer);
     }
   }, [id]);
@@ -106,12 +106,15 @@ export const BentoGridItem = ({
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
         <div className="w-full h-full absolute">
          {img && (
+           <div className="relative w-full h-full">
             <img
               src={img}
               alt={img}
-              className={cn(imgClassName, "object-cover object-center ")}
+              loading="lazy"
+              className={cn(imgClassName, "object-cover object-center w-full h-full")}
             />
-          )}
+           </div>
+         )}
         </div>
         <div className={`absolute right-0 -bottom-5 ${id 
           ===5 && 'w-full opacity-80'}`}>
@@ -119,6 +122,7 @@ export const BentoGridItem = ({
               <img
                 src={spareImg}
                 alt={spareImg}
+                loading="lazy"
                 className={"object-cover object-center w-full h-full"}
               />
             )}
@@ -187,7 +191,12 @@ export const BentoGridItem = ({
             <div className="flex-1 flex flex-col items-center mt-[8%] lg:mt-[16%] md:mt-[15%]">
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-[#1a1f3d] flex items-center justify-center">
-                  <img src={content.mechanical.icon} alt="Mechanical Design" className="w-8 h-8 lg:w-10 lg:h-10" />
+                  <img 
+                    src={content.mechanical.icon} 
+                    alt="Mechanical Design" 
+                    loading="lazy"
+                    className="w-8 h-8 lg:w-10 lg:h-10" 
+                  />
                 </div>
                 <h3 className="text-xl lg:text-2xl font-bold mt-4 text-center">{content.mechanical.title}</h3>
               </div>
@@ -201,7 +210,12 @@ export const BentoGridItem = ({
             <div className="flex-1 flex flex-col items-center mt-[8%] lg:mt-[16%] md:mt-[15%]">
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-[#1a1f3d] flex items-center justify-center">
-                  <img src={content.shop.icon} alt="Shop Tools" className="w-8 h-8 lg:w-10 lg:h-10" />
+                  <img 
+                    src={content.shop.icon} 
+                    alt="Shop Tools" 
+                    loading="lazy"
+                    className="w-8 h-8 lg:w-10 lg:h-10" 
+                  />
                 </div>
                 <h3 className="text-xl lg:text-2xl font-bold mt-4 text-center">{content.shop.title}</h3>
               </div>

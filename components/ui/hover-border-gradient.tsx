@@ -7,10 +7,11 @@ export function HoverBorderGradient({
   children,
   containerClassName,
   className,
-  as: Tag = "button",
+  as: Tag = "div",
   duration = 0.4,
   slowDuration = 7,
   clockwise = false,
+  role = "none",
   ...props
 }: React.PropsWithChildren<{
     as?: React.ElementType;
@@ -19,6 +20,7 @@ export function HoverBorderGradient({
     duration?: number;
     slowDuration?: number;
     clockwise?: boolean;
+    role?: string;
   } & React.HTMLAttributes<HTMLElement>
 >) {
   const [hovered, setHovered] = useState<boolean>(false);
@@ -48,7 +50,7 @@ export function HoverBorderGradient({
         gradients[0]  // Back to start
       ]
     };
-  }, []); // Empty deps since these never change
+  }, []);
 
   // Memoize animation sequence to prevent recalculation on every render
   const animationSequence = useMemo(() => {
@@ -84,9 +86,10 @@ export function HoverBorderGradient({
         setIsHoverOutTransition(true);
       }}
       className={cn(
-        "relative flex rounded-full border content-center bg-black/20 hover:bg-black/10 transition duration-500 dark:bg-white/20 items-center flex-col flex-nowrap gap-10 h-min justify-center overflow-visible p-px decoration-clone w-fit",
+        "relative flex content-center bg-black/20 hover:bg-black/10 transition duration-500 dark:bg-white/20 items-center flex-col flex-nowrap gap-10 h-min justify-center overflow-visible p-px decoration-clone w-fit rounded-xl border-2 border-transparent",
         containerClassName
       )}
+      role={role}
       {...props}
     >
       <div
